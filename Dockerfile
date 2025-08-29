@@ -53,9 +53,9 @@ ENV COMFYUI_PORT=8188
 EXPOSE ${COMFYUI_PORT}
 
 # 创建非 root 用户（安全性考虑）
-RUN useradd --create-home --shell /bin/bash comfyui \
-    && chown -R comfyui:comfyui /ComfyUI
-USER comfyui
+# RUN useradd --create-home --shell /bin/bash comfyui \
+#     && chown -R comfyui:comfyui /ComfyUI
+# USER comfyui
 
 # 启动 ComfyUI（使用环境变量传参）
 CMD ["sh", "-c", "python main.py --listen $COMFYUI_HOST --port $COMFYUI_PORT"]
