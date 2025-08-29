@@ -1,0 +1,16 @@
+kornia
+rembg
+dill
+ultralytics
+sentencepiece
+spandrel
+av
+pydantic
+pydantic_settings
+alembic
+rembg
+onnxruntime
+matplotlib
+opencv-python-headless
+imageio_ffmpeg
+omegaconf
