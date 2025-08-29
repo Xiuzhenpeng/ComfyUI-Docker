@@ -29,8 +29,12 @@ RUN /ComfyUI/venv/bin/pip install -r requirements.txt
 # 设置默认使用虚拟环境的 Python
 ENV PATH="/ComfyUI/venv/bin:$PATH"
 
-# 暴露端口（根据 ComfyUI 默认端口修改）
-EXPOSE 8188
+# 设置 ComfyUI 环境变量
+ENV COMFYUI_HOST=0.0.0.0
+ENV COMFYUI_PORT=8188
 
-# 启动 ComfyUI
-CMD ["python", "main.py"]
+# 暴露端口
+EXPOSE ${COMFYUI_PORT}
+
+# 启动 ComfyUI（使用环境变量传参）
+CMD ["sh", "-c", "python main.py --listen $COMFYUI_HOST --port $COMFYUI_PORT"]
