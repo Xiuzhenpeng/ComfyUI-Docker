@@ -39,6 +39,10 @@ RUN pip install --upgrade pip --no-cache-dir \
        --index-url https://download.pytorch.org/whl/cu121 --no-cache-dir \
     && pip install -r requirements.txt --no-cache-dir \
     && pip install -r requirements-swarmui.txt --no-cache-dir \
+    && for req in $(find custom_nodes -maxdepth 2 -mindepth 2 -type f -name "requirements.txt"); do \
+           echo "Installing requirements from $req"; \
+           pip install -r "$req" --no-cache-dir || true; \
+       done \
     && find /ComfyUI/venv -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true \
     && find /ComfyUI/venv -name "*.pyc" -delete
 
