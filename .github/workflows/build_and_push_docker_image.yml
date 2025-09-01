@@ -7,6 +7,10 @@ on:
         description: 'Docker image tag'
         required: false
         default: 'latest'
+      branch:
+        description: 'Git branch to build'
+        required: false
+        default: 'master'
 
 jobs:
   build-and-push:
@@ -16,6 +20,8 @@ jobs:
       # 1️⃣ Checkout 仓库
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.branch }}
 
       # 2️⃣ 登录 Docker Hub
       - name: Log in to Docker Hub
