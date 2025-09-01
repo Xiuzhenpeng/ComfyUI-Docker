@@ -7,10 +7,6 @@ on:
         description: 'Docker image tag'
         required: false
         default: 'latest'
-      branch:
-        description: 'Git branch to build'
-        required: false
-        default: 'master'
 
 jobs:
   build-and-push:

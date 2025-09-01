@@ -1,3 +1,30 @@
 [submodule "custom_nodes/comfyui_controlnet_aux"]
 	path = custom_nodes/comfyui_controlnet_aux
 	url = https://github.com/Fannovel16/comfyui_controlnet_aux.git
+[submodule "custom_nodes/ComfyUI-KJNodes"]
+	path = custom_nodes/ComfyUI-KJNodes
+	url = https://github.com/kijai/ComfyUI-KJNodes
+[submodule "custom_nodes/ComfyUI-Easy-Use"]
+	path = custom_nodes/ComfyUI-Easy-Use
+	url = https://github.com/yolain/ComfyUI-Easy-Use
+[submodule "custom_nodes/ComfyUI_LayerStyle"]
+	path = custom_nodes/ComfyUI_LayerStyle
+	url = https://github.com/chflame163/ComfyUI_LayerStyle
+[submodule "custom_nodes/ComfyUI-TeaCache"]
+	path = custom_nodes/ComfyUI-TeaCache
+	url = https://github.com/welltop-cn/ComfyUI-TeaCache
+[submodule "custom_nodes/ComfyUI_IPAdapter_plus"]
+	path = custom_nodes/ComfyUI_IPAdapter_plus
+	url = https://github.com/cubiq/ComfyUI_IPAdapter_plus
+[submodule "custom_nodes/ComfyUI_SLK_joy_caption_two"]
+	path = custom_nodes/ComfyUI_SLK_joy_caption_two
+	url = https://github.com/EvilBT/ComfyUI_SLK_joy_caption_two
+[submodule "custom_nodes/ComfyUI-Lotus"]
+	path = custom_nodes/ComfyUI-Lotus
+	url = https://github.com/kijai/ComfyUI-Lotus
+[submodule "custom_nodes/ComfyUI_Comfyroll_CustomNodes"]
+	path = custom_nodes/ComfyUI_Comfyroll_CustomNodes
+	url = https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes
+[submodule "custom_nodes/was-node-suite-comfyui"]
+	path = custom_nodes/was-node-suite-comfyui
+	url = https://github.com/WASasquatch/was-node-suite-comfyui
