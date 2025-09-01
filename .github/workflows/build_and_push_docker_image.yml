@@ -3,14 +3,10 @@ name: Build and Push ComfyUI Docker
 on:
   workflow_dispatch:
     inputs:
-      tags:
+      tag:
         description: 'Docker image tag'
         required: false
         default: 'latest'
-      branch:
-        description: 'Git branch to build'
-        required: false
-        default: 'master'
 
 jobs:
   build-and-push:
