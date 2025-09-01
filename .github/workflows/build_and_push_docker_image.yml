@@ -1,10 +1,12 @@
 name: Build and Push ComfyUI Docker
 
 on:
-  push:
-    branches:
-      - master   # 当 main 分支有提交时触发
-  workflow_dispatch:   # 允许手动触发
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Docker image tag'
+        required: false
+        default: 'latest'
 
 jobs:
   build-and-push:
@@ -25,9 +27,9 @@ jobs:
       # 3️⃣ 构建 Docker 镜像
       - name: Build Docker image
         run: |
-          docker build -t xiuzhenpeng/comfyui:latest .
+          docker build -t xiuzhenpeng/comfyui:${{ github.event.inputs.tag || 'latest' }} .
 
       # 4️⃣ 推送 Docker 镜像
       - name: Push Docker image
         run: |
-          docker push xiuzhenpeng/comfyui:latest
+          docker push xiuzhenpeng/comfyui:${{ github.event.inputs.tag || 'latest' }}
