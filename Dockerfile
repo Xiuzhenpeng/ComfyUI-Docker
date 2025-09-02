@@ -33,6 +33,9 @@ ENV PATH="/ComfyUI/venv/bin:$PATH"
 COPY requirements.txt /ComfyUI/
 COPY requirements-swarmui.txt /ComfyUI/
 
+# 复制 ComfyUI 项目文件到容器
+COPY . /ComfyUI
+
 # 安装 Python 依赖并清理缓存
 RUN pip install --upgrade pip --no-cache-dir \
     && pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 \
@@ -45,9 +48,6 @@ RUN pip install --upgrade pip --no-cache-dir \
        done \
     && find /ComfyUI/venv -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true \
     && find /ComfyUI/venv -name "*.pyc" -delete
-
-# 复制 ComfyUI 项目文件到容器（假设你本地有 ComfyUI 文件夹）
-COPY . /ComfyUI
 
 # 清理不必要的文件
 RUN rm -rf .git* \
