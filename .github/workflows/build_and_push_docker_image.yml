@@ -17,21 +17,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
+          fetch-depth: 0
+          submodules: false  # 先不自动处理子模块，我们手动控制
           ref: ${{ github.event.inputs.branch }}
+      
+      # 2️⃣ 更新子模块
+      - name: Update submodules
+        run: |
+          git submodule update --init --recursive
 
-      # 2️⃣ 登录 Docker Hub
+      # 3️⃣ 登录 Docker Hub
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-      # 3️⃣ 构建 Docker 镜像
+      # 4️⃣ 构建 Docker 镜像
       - name: Build Docker image
         run: |
           docker build -t xiuzhenpeng/comfyui:${{ github.event.inputs.tag || 'latest' }} .
 
-      # 4️⃣ 推送 Docker 镜像
+      # 5️⃣ 推送 Docker 镜像
       - name: Push Docker image
         run: |
           docker push xiuzhenpeng/comfyui:${{ github.event.inputs.tag || 'latest' }}
