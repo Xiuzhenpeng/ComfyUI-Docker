@@ -26,19 +26,26 @@ jobs:
         run: |
           git submodule update --init --recursive
 
-      # 3️⃣ 登录 Docker Hub
+      # 3️⃣ 下载 HuggingFace 模型
+      - name: Download Depth-Anything-V2-Large model
+        run: |
+          mkdir -p ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts/depth-anything/Depth-Anything-V2-Large
+          wget -O ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts/depth-anything/Depth-Anything-V2-Large/depth_anything_v2_vitl.pth \
+            https://huggingface.co/depth-anything/Depth-Anything-V2-Large/resolve/main/depth_anything_v2_vitl.pth
+
+      # 4️⃣ 登录 Docker Hub
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-      # 4️⃣ 构建 Docker 镜像
+      # 5️⃣ 构建 Docker 镜像
       - name: Build Docker image
         run: |
           docker build -t xiuzhenpeng/comfyui:${{ github.event.inputs.tag || 'latest' }} .
 
-      # 5️⃣ 推送 Docker 镜像
+      # 6️⃣ 推送 Docker 镜像
       - name: Push Docker image
         run: |
           docker push xiuzhenpeng/comfyui:${{ github.event.inputs.tag || 'latest' }}
