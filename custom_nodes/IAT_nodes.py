@@ -1,4 +1,6 @@
 import os
+from folder_paths import get_folder_paths
+
 import torch
 import random
 from comfy.utils import common_upscale
@@ -213,7 +215,7 @@ class IntInputNode:
 # QwenTranslator
 class QwenTranslator:
     def __init__(self):
-        self.model_path = os.path.join(os.path.dirname(__file__), "..", "models", "Qwen", "Qwen2.5-3B-Instruct")
+        self.model_path = os.path.join(get_folder_paths("diffusion_models")[0], "Qwen2.5-3B-Instruct")
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.model = AutoModelForCausalLM.from_pretrained(
             self.model_path,
