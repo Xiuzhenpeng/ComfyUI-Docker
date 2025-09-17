@@ -28,3 +28,18 @@
 [submodule "custom_nodes/was-node-suite-comfyui"]
 	path = custom_nodes/was-node-suite-comfyui
 	url = https://github.com/WASasquatch/was-node-suite-comfyui
+[submodule "custom_nodes/comfyui-easyapi-nodes"]
+	path = custom_nodes/comfyui-easyapi-nodes
+	url = https://github.com/lldacing/comfyui-easyapi-nodes.git
+[submodule "custom_nodes/ComfyUI-Easy-Use"]
+	path = custom_nodes/ComfyUI-Easy-Use
+	url = https://github.com/yolain/ComfyUI-Easy-Use.git
+[submodule "custom_nodes/execution-inversion-demo-comfyui"]
+	path = custom_nodes/execution-inversion-demo-comfyui
+	url = https://github.com/BadCafeCode/execution-inversion-demo-comfyui.git
+[submodule "custom_nodes/was-node-suite-comfyui"]
+	path = custom_nodes/was-node-suite-comfyui
+	url = https://github.com/WASasquatch/was-node-suite-comfyui.git
+[submodule "custom_nodes/xiu_iat"]
+	path = custom_nodes/xiu_iat
+	url = https://github.com/Xiuzhenpeng/xiu_iat_comfyui.git
