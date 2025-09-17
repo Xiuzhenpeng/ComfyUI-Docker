@@ -29,9 +29,15 @@ jobs:
       # 3️⃣ 下载 HuggingFace 模型
       - name: Download Depth-Anything-V2-Large model
         run: |
+          # 下载 Depth-Anything-V2-Large
           mkdir -p custom_nodes/comfyui_controlnet_aux/ckpts/depth-anything/Depth-Anything-V2-Large
           wget -O custom_nodes/comfyui_controlnet_aux/ckpts/depth-anything/Depth-Anything-V2-Large/depth_anything_v2_vitl.pth \
             https://huggingface.co/depth-anything/Depth-Anything-V2-Large/resolve/main/depth_anything_v2_vitl.pth
+
+          # 下载 lllyasviel Annotators, for Realistic Lineart
+          mkdir -p custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/
+          wget -O custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model.pth \
+            https://huggingface.co/lllyasviel/Annotators/resolve/main/sk_model.pth?download=true
 
       # 4️⃣ 登录 Docker Hub
       - name: Log in to Docker Hub
