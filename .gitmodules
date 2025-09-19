@@ -40,3 +40,15 @@
 [submodule "custom_nodes/ComfyUI-SUPIR"]
 	path = custom_nodes/ComfyUI-SUPIR
 	url = https://github.com/kijai/ComfyUI-SUPIR.git
+[submodule "custom_nodes/comfyui-various"]
+	path = custom_nodes/comfyui-various
+	url = https://github.com/jamesWalker55/comfyui-various.git
+[submodule "custom_nodes/ComfyUI_essentials"]
+	path = custom_nodes/ComfyUI_essentials
+	url = https://github.com/cubiq/ComfyUI_essentials.git
+[submodule "custom_nodes/comfyui-mixlab-nodes"]
+	path = custom_nodes/comfyui-mixlab-nodes
+	url = https://github.com/MixLabPro/comfyui-mixlab-nodes.git
+[submodule "custom_nodes/ComfyUI-IC-Light-Native"]
+	path = custom_nodes/ComfyUI-IC-Light-Native
+	url = https://github.com/huchenlei/ComfyUI-IC-Light-Native.git
