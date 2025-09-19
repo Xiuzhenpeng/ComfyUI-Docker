@@ -37,3 +37,6 @@
 [submodule "custom_nodes/xiu_iat"]
 	path = custom_nodes/xiu_iat
 	url = https://github.com/Xiuzhenpeng/xiu_iat_comfyui.git
+[submodule "custom_nodes/ComfyUI-SUPIR"]
+	path = custom_nodes/ComfyUI-SUPIR
+	url = https://github.com/kijai/ComfyUI-SUPIR.git
