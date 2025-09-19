@@ -59,9 +59,9 @@ RUN rm -rf .git* \
     && find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
 
 # 创建软链接
-RUN ln -s /SwarmUI/Models/tensorrt /ComfyUI/models/ipadapter \
-    && ln -s /SwarmUI/Models/tensorrt /ComfyUI/models/Joy_caption_two \
-    && ln -s /SwarmUI/Models/tensorrt /ComfyUI/models/LLM \
+RUN ln -s /SwarmUI/Models/ipadapter /ComfyUI/models/ipadapter \
+    && ln -s /SwarmUI/Models/Joy_caption_two /ComfyUI/models/Joy_caption_two \
+    && ln -s /SwarmUI/Models/LLM /ComfyUI/models/LLM \
     && ln -s /SwarmUI/Models/clip/siglip-so400m-patch14-384 /ComfyUI/models/clip/siglip-so400m-patch14-384
 
 # 设置 ComfyUI 环境变量
