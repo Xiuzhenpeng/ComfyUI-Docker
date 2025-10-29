@@ -44,7 +44,7 @@ class Base64ToImageNode:
             img = torch.from_numpy(img)[None,]
             return (img,)
         except Exception as e:
-            print(f"Base64转换失败: {str(e)}")
+            logging.warning(f"Base64转换失败: {str(e)}")
             blank_img = torch.zeros((1, 512, 512, 3))
             return (blank_img,)
 
