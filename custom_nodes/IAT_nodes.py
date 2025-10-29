@@ -1,6 +1,5 @@
 import os
 from folder_paths import get_folder_paths
-
 import torch
 import random
 from comfy.utils import common_upscale
@@ -14,6 +13,7 @@ from nodes import MAX_RESOLUTION, LoraLoader
 import re
 import os
 from transformers import AutoModelForCausalLM, AutoTokenizer
+import logging
 
 # Base64ToImageNode
 class Base64ToImageNode:
