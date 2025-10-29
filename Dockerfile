@@ -33,17 +33,21 @@ ENV PATH="/ComfyUI/venv/bin:$PATH"
 COPY requirements.txt /ComfyUI/
 COPY requirements-swarmui.txt /ComfyUI/
 
+# 复制 ComfyUI 项目文件到容器
+COPY . /ComfyUI
+
 # 安装 Python 依赖并清理缓存
 RUN pip install --upgrade pip --no-cache-dir \
     && pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 \
        --index-url https://download.pytorch.org/whl/cu121 --no-cache-dir \
     && pip install -r requirements.txt --no-cache-dir \
     && pip install -r requirements-swarmui.txt --no-cache-dir \
+    && for req in $(find custom_nodes -maxdepth 2 -mindepth 2 -type f -name "requirements.txt"); do \
+           echo "Installing requirements from $req"; \
+           pip install -r "$req" --no-cache-dir || true; \
+       done \
     && find /ComfyUI/venv -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true \
     && find /ComfyUI/venv -name "*.pyc" -delete
-
-# 复制 ComfyUI 项目文件到容器（假设你本地有 ComfyUI 文件夹）
-COPY . /ComfyUI
 
 # 清理不必要的文件
 RUN rm -rf .git* \
@@ -53,6 +57,13 @@ RUN rm -rf .git* \
     && rm -rf .pytest_cache \
     && find . -name "*.pyc" -delete \
     && find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+
+# 创建软链接
+RUN ln -s /SwarmUI/Models/ipadapter /ComfyUI/models/ipadapter \
+    && ln -s /SwarmUI/Models/Joy_caption_two /ComfyUI/models/Joy_caption_two \
+    && ln -s /SwarmUI/Models/LLM /ComfyUI/models/LLM \
+    && ln -s /SwarmUI/Models/clip/siglip-so400m-patch14-384 /ComfyUI/models/clip/siglip-so400m-patch14-384 \
+    && ln -s /SwarmUI/Models/rembg /ComfyUI/models/rembg
 
 # 设置 ComfyUI 环境变量
 ENV COMFYUI_HOST=0.0.0.0

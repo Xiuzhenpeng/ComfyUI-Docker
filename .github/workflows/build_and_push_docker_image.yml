@@ -17,22 +17,47 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
+          fetch-depth: 0
+          submodules: false  # 先不自动处理子模块，我们手动控制
           ref: ${{ github.event.inputs.branch }}
-          submodules: recursive
+      
+      # 2️⃣ 更新子模块
+      - name: Update submodules
+        run: |
+          git submodule update --init --recursive
 
-      # 2️⃣ 登录 Docker Hub
+      # 3️⃣ 下载 HuggingFace 模型
+      - name: Download Depth-Anything-V2-Large model
+        run: |
+          # 下载 Depth-Anything-V2-Large
+          mkdir -p custom_nodes/comfyui_controlnet_aux/ckpts/depth-anything/Depth-Anything-V2-Large
+          wget -O custom_nodes/comfyui_controlnet_aux/ckpts/depth-anything/Depth-Anything-V2-Large/depth_anything_v2_vitl.pth \
+            https://huggingface.co/depth-anything/Depth-Anything-V2-Large/resolve/main/depth_anything_v2_vitl.pth
+
+          # 下载 lllyasviel Annotators sk_model.pth和sk_model2.pth, for Realistic Lineart
+          mkdir -p custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/
+          wget -O custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model.pth \
+            https://huggingface.co/lllyasviel/Annotators/resolve/main/sk_model.pth?download=true
+          wget -O custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model2.pth \
+            https://huggingface.co/lllyasviel/Annotators/resolve/main/sk_model2.pth?download=true
+
+          # 下载 lllyasviel Annotators ControlNetHED.pth, for HEDPreprocessor
+          wget -O custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/ControlNetHED.pth \
+            https://huggingface.co/lllyasviel/Annotators/resolve/main/ControlNetHED.pth?download=true
+
+      # 4️⃣ 登录 Docker Hub
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-      # 3️⃣ 构建 Docker 镜像
+      # 5️⃣ 构建 Docker 镜像
       - name: Build Docker image
         run: |
           docker build -t xiuzhenpeng/comfyui:${{ github.event.inputs.tag || 'latest' }} .
 
-      # 4️⃣ 推送 Docker 镜像
+      # 6️⃣ 推送 Docker 镜像
       - name: Push Docker image
         run: |
           docker push xiuzhenpeng/comfyui:${{ github.event.inputs.tag || 'latest' }}
