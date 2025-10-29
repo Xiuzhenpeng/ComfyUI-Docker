@@ -1,23 +1,19 @@
 import os
 from folder_paths import get_folder_paths
+import logging
 import torch
 import random
-from comfy.utils import common_upscale
 from nodes import MAX_RESOLUTION
 import base64
 from io import BytesIO
 from PIL import Image
 import numpy as np
-from comfy.utils import common_upscale
-from nodes import MAX_RESOLUTION, LoraLoader
 import re
-import os
 from transformers import AutoModelForCausalLM, AutoTokenizer
-import logging
 
 # Base64ToImageNode
 class Base64ToImageNode:
-    @classmethod 
+    @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
@@ -50,7 +46,7 @@ class Base64ToImageNode:
 
 # FloatInputNode
 class FloatInputNode:
-    @classmethod 
+    @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
@@ -192,7 +188,7 @@ class ImageSizeNode:
 
 # IntInputNode
 class IntInputNode:
-    @classmethod 
+    @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
@@ -275,7 +271,7 @@ class QwenTranslator:
 
 # TextInputNode
 class TextInputNode:
-    @classmethod 
+    @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
@@ -322,7 +318,7 @@ class SeedGeneratorNode:
     def generate_seed(self, seed, control_after_generate):
         # 先保存当前显示的种子值用于返回
         seed_to_return = seed
-        
+
         # 如果需要随机化，则在返回当前种子后，为下一次准备一个新的随机种子
         if control_after_generate:
             # 生成新的随机种子并存储，但不立即返回
@@ -360,21 +356,21 @@ NODE_CLASS_MAPPINGS = {
     "Base64ToImageNode by IAT": Base64ToImageNode,
     "FloatInputNode by IAT": FloatInputNode,
     "ImageMatchSize by IAT": ImageMatchSize,
-    "ImageResizeLongestSide by IAT": ImageResizeLongestSideNode, 
+    "ImageResizeLongestSide by IAT": ImageResizeLongestSideNode,
     "ImageResizeToSDXL by IAT": ImageResizeToSDXL,
-    "ImageSize by IAT": ImageSizeNode, 
+    "ImageSize by IAT": ImageSizeNode,
     "IntInputNode by IAT": IntInputNode,
     "QwenTranslator by IAT": QwenTranslator,
     "TextInputNode by IAT": TextInputNode,
     "SeedGeneratorNode by IAT": SeedGeneratorNode,
-    "FloatDivideByFourNode by IAT": FloatDivideByFourNode, 
+    "FloatDivideByFourNode by IAT": FloatDivideByFourNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "Base64ToImageNode by IAT": "Base64 to Image by IAT",
     "FloatInputNode by IAT": "Float Input by IAT",
     "ImageMatchSize by IAT": "Image Match Size by IAT",
-    "ImageResizeLongestSide by IAT": "Image Resize Longest Side by IAT",  
+    "ImageResizeLongestSide by IAT": "Image Resize Longest Side by IAT",
     "ImageResizeToSDXL by IAT": "ImageResizeToSDXL by IAT",
     "ImageSize by IAT": "Image Size by IAT",
     "IntInputNode by IAT": "Integer Input by IAT",
