@@ -376,7 +376,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "ImageMatchSize by IAT": "Image Match Size by IAT",
     "ImageResizeLongestSide by IAT": "Image Resize Longest Side by IAT",  
     "ImageResizeToSDXL by IAT": "ImageResizeToSDXL by IAT",
-    "ImageSize by IAT": "Image Size by IAT", 
+    "ImageSize by IAT": "Image Size by IAT",
     "IntInputNode by IAT": "Integer Input by IAT",
     "QwenTranslator by IAT": "Qwen Translator by IAT",
     "TextInputNode by IAT": "Text Input by IAT",
