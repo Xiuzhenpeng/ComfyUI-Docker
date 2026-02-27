@@ -1,0 +1,180 @@
+[
+    {
+        "_id": "6976fcbe27c035a0003a3835",
+        "icon": "google",
+        "name": "Google",
+        "sort": 10000,
+        "display": true,
+        "base_url": "https://generativelanguage.googleapis.com",
+        "sub_icon": "gemini",
+        "logo_icon": "google",
+        "price_url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "guide_url": "https://ai.google.dev/gemini-api/docs",
+        "categories": [
+            "chat",
+            "vision",
+            "image",
+            "video"
+        ],
+        "created_at": 1769282063,
+        "identifier": "google",
+        "updated_at": 1769282063,
+        "description": "Google 的 Gemini 系列是其最先进、通用的 AI模型，由 Google DeepMind 打造，专为多模态设计，支持文本、代码、图像、音频和视频的无缝理解与处理。适用于从数据中心到移动设备的多种环境，极大提升了AI模型的效率与应用广泛性。",
+        "provider_type": 1
+    },
+    {
+        "_id": "6976fcbe27c035a0003a3836",
+        "icon": "aliyun",
+        "name": "阿里百炼",
+        "sort": 10000,
+        "display": true,
+        "base_url": "https://dashscope.aliyuncs.com/compatible-mode",
+        "sub_icon": "qwen",
+        "logo_icon": "aliyun",
+        "price_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=doc#/doc/?type=model&url=2987148",
+        "guide_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=doc#/doc",
+        "categories": [
+            "chat",
+            "vision",
+            "image",
+            "video",
+            "tts"
+        ],
+        "created_at": 1769282064,
+        "identifier": "aliyun",
+        "updated_at": 1769282064,
+        "description": "通义千问是阿里云自主研发的超大规模语言模型，具有强大的自然语言理解和生成能力。它可以回答各种问题、创作文字内容、表达观点看法、撰写代码等，在多个领域发挥作用。",
+        "provider_type": 1
+    },
+    {
+        "_id": "6976fcbe27c035a0003a3837",
+        "icon": "zhipu",
+        "name": "智谱AI",
+        "sort": 10000,
+        "display": true,
+        "base_url": "https://open.bigmodel.cn/api/paas/v4",
+        "sub_icon": "",
+        "logo_icon": "zhipu",
+        "price_url": "https://bigmodel.cn/pricing",
+        "guide_url": "https://docs.bigmodel.cn/cn/guide/start/model-overview",
+        "categories": [
+            "chat",
+            "vision"
+        ],
+        "created_at": 1769282065,
+        "identifier": "zhipu",
+        "updated_at": 1769282065,
+        "description": "智谱 AI 提供多模态与语言模型的开放平台，支持广泛的AI应用场景，包括文本处理、图像理解与编程辅助等。",
+        "provider_type": 1,
+        "ignore_v1": true
+    },
+    {
+        "_id": "6976fcbe27c035a0003a3838",
+        "icon": "deepseek",
+        "name": "Deepseek",
+        "sort": 10000,
+        "display": true,
+        "base_url": "https://api.deepseek.com",
+        "sub_icon": "",
+        "logo_icon": "deepseek",
+        "price_url": "https://platform.deepseek.com/api-docs/zh-cn/quick_start/pricing",
+        "guide_url": "https://platform.deepseek.com/api-docs/zh-cn/",
+        "categories": [
+            "chat"
+        ],
+        "created_at": 1769282066,
+        "identifier": "deepseek",
+        "updated_at": 1769282066,
+        "description": "DeepSeek 是一家专注于人工智能技术研究和应用的公司，其最新模型 DeepSeek-V3 多项评测成绩超越 Qwen2.5-72B 和 Llama-3.1-405B 等开源模型，性能对齐领军闭源模型 GPT-4o 与 Claude-3.5-Sonnet。",
+        "provider_type": 1,
+        "ignore_v1": true
+    },
+    {
+        "_id": "6976fcbe27c035a0003a38355",
+        "icon": "modelscope",
+        "name": "魔搭",
+        "sort": 10000,
+        "display": true,
+        "base_url": "https://api-inference.modelscope.cn",
+        "sub_icon": "",
+        "logo_icon": "modelscope",
+        "price_url": "https://modelscope.cn/models",
+        "guide_url": "https://modelscope.cn/my/access/token",
+        "categories": [
+            "chat",
+            "vision",
+            "image",
+            "video"
+        ],
+        "created_at": 1769282088,
+        "identifier": "modelscope",
+        "updated_at": 1769282088,
+        "description": "魔搭是阿里巴巴达摩院推出的AI模型服务平台，提供多样化的AI模型接口，支持文本、图像、视频等多模态应用，满足开发者和企业的不同需求。",
+        "provider_type": 2
+    },
+    {
+        "_id": "6976fcbe27c035a0003a3839",
+        "icon": "openrouter",
+        "name": "OpenRouter",
+        "sort": 10000,
+        "display": true,
+        "base_url": "https://openrouter.ai/api",
+        "sub_icon": "",
+        "logo_icon": "openrouter",
+        "price_url": "https://openrouter.ai/models",
+        "guide_url": "https://openrouter.ai/docs/quickstart",
+        "categories": [
+            "chat",
+            "vision"
+        ],
+        "created_at": 1769282067,
+        "identifier": "openrouter",
+        "updated_at": 1769282067,
+        "description": "OpenRouter 是一个提供多种前沿大模型接口的服务平台，支持 OpenAI、Anthropic、LLaMA 及更多，适合多样化的开发和应用需求。用户可根据自身需求灵活选择最优的模型和价格，助力AI体验的提升。",
+        "provider_type": 2
+    },
+    {
+        "_id": "6976fcbe27c035a0003a383a",
+        "icon": "t8star",
+        "name": "贞贞工坊",
+        "sort": 10000,
+        "display": true,
+        "base_url": "https://ai.t8star.cn",
+        "sub_icon": "",
+        "logo_icon": "t8star",
+        "price_url": "https://ai.t8star.cn/models",
+        "guide_url": "hhttps://ai.t8star.cn/api-set",
+        "categories": [
+            "chat",
+            "vision",
+            "image",
+            "video"
+        ],
+        "created_at": 1769282068,
+        "identifier": "t8star",
+        "updated_at": 1769282068,
+        "description": "贞贞的AI工坊是T8star的AI大模型接口三方服务商平台，集合了主流模型及最新模型。",
+        "provider_type": 2
+    },
+    {
+        "_id": "69784e2407f12877c9a81d40",
+        "icon": "flow",
+        "name": "Flow2API",
+        "sort": 10000,
+        "display": true,
+        "base_url": "https://localhost:8000",
+        "sub_icon": "",
+        "logo_icon": "flow",
+        "price_url": "",
+        "guide_url": "https://github.com/TheSmallHanCat/flow2api",
+        "categories": [
+            "image",
+            "video"
+        ],
+        "created_at": 1769492034,
+        "identifier": "flow2api",
+        "updated_at": 1769492034,
+        "description": "一个功能完整的 OpenAI 兼容 API 服务，为 Flow 提供统一的接口",
+        "provider_type": 3
+    }
+]

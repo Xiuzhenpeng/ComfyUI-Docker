@@ -1,0 +1,42 @@
+[
+    {
+        "identifier": "deepseek-chat",
+        "provider_identifier": "deepseek",
+        "name": "DeepSeek Chat",
+        "description": "",
+        "context_window": 131072,
+        "max_tokens": 8192,
+        "temperature": 1.0,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "deepseek",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "deepseek-reasoner",
+        "provider_identifier": "deepseek",
+        "name": "DeepSeek Reasoner",
+        "description": "",
+        "context_window": 131072,
+        "max_tokens": 8192,
+        "temperature": 1.0,
+        "top_p": null,
+        "supports_thinking": true,
+        "stauts": 1,
+        "sort": 10001,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "deepseek",
+        "categories": [
+            "chat"
+        ]
+    }
+]

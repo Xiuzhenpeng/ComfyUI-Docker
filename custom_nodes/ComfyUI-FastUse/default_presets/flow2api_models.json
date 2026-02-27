@@ -1,0 +1,42 @@
+[
+    {
+        "identifier": "gemini-3.0-pro-image",
+        "provider_identifier": "flow2api",
+        "name": "🍌 Nano banana Pro",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "gemini",
+        "categories": [
+            "image"
+        ]
+    },
+    {
+        "identifier": "veo_3_1_t2v_fast",
+        "provider_identifier": "flow2api",
+        "name": "🔉 Veo 3.1 - Fast",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "gemini",
+        "categories": [
+            "video"
+        ]
+    }
+]

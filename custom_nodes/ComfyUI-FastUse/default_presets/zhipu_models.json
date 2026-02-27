@@ -1,0 +1,662 @@
+[
+    {
+        "identifier": "glm-asr-2512",
+        "provider_identifier": "zhipu",
+        "name": "GLM-ASR-2512",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "asr"
+        ]
+    },
+    {
+        "identifier": "glm-4-voice",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4-Voice",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "z.ai",
+        "categories": [
+            "asr"
+        ]
+    },
+    {
+        "identifier": "glm-image",
+        "provider_identifier": "zhipu",
+        "name": "GLM-Image",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "image"
+        ]
+    },
+    {
+        "identifier": "cogview-4-250304",
+        "provider_identifier": "zhipu",
+        "name": "CogView-4-250304",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "image"
+        ]
+    },
+    {
+        "identifier": "glm-4.6v",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.6V",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "z.ai",
+        "categories": [
+            "vision"
+        ]
+    },
+    {
+        "identifier": "glm-4.6v-flash",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.6V-Flash",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "z.ai",
+        "categories": [
+            "vision"
+        ]
+    },
+    {
+        "identifier": "glm-4.5v",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.5V",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "z.ai",
+        "categories": [
+            "vision"
+        ]
+    },
+    {
+        "identifier": "glm-4v-plus-0111",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4V-Plus-0111",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "z.ai",
+        "categories": [
+            "vision"
+        ]
+    },
+    {
+        "identifier": "glm-4v-plus",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4V-Plus",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "z.ai",
+        "categories": [
+            "vision"
+        ]
+    },
+    {
+        "identifier": "glm-4v",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4V",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "z.ai",
+        "categories": [
+            "vision"
+        ]
+    },
+    {
+        "identifier": "glm-4v-flash",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4V-Flash",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "z.ai",
+        "categories": [
+            "vision"
+        ]
+    },
+    {
+        "identifier": "glm-4.1v-thinking-flashx",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.1V-Thinking-FlashX",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": true,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "z.ai",
+        "categories": [
+            "vision"
+        ]
+    },
+    {
+        "identifier": "glm-4.1v-thinking-flash",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.1V-Thinking-Flash",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": true,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "z.ai",
+        "categories": [
+            "vision"
+        ]
+    },
+    {
+        "identifier": "cogvideox-3",
+        "provider_identifier": "zhipu",
+        "name": "CogVideoX-3",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "cogvideo",
+        "categories": [
+            "video"
+        ]
+    },
+    {
+        "identifier": "glm-5",
+        "provider_identifier": "zhipu",
+        "name": "GLM-5",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1770826994,
+        "updated_at": 1770826994,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4.7",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.7",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4.7-flashx",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.7-FlashX",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4.7-flash",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.7-Flash",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4.6",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.6",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4.5",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.5",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4.5-x",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.5-X",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4.5-air",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.5-Air",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4.5-airx",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.5-AirX",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4.5-flash",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4.5-Flash",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4-plus",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4-Plus",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4-air-250414",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4-Air-250414",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4-flash-250414",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4-Flash-250414",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4-flash",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4-Flash",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4-0520",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4-0520",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4-long",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4-Long",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4-airx",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4-AirX",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4-air",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4-Air",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    },
+    {
+        "identifier": "glm-4-9b",
+        "provider_identifier": "zhipu",
+        "name": "GLM-4-9B",
+        "description": "",
+        "context_window": null,
+        "max_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "supports_thinking": false,
+        "stauts": 1,
+        "sort": 10000,
+        "display": true,
+        "created_at": 1769523154,
+        "updated_at": 1769523154,
+        "group_name": "chatglm",
+        "categories": [
+            "chat"
+        ]
+    }
+]
