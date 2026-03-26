@@ -52,3 +52,6 @@
 [submodule "custom_nodes/ComfyUI-IC-Light-Native"]
 	path = custom_nodes/ComfyUI-IC-Light-Native
 	url = https://github.com/huchenlei/ComfyUI-IC-Light-Native.git
+[submodule "custom_nodes/ComfyUI-SeedVR2_VideoUpscaler"]
+	path = custom_nodes/ComfyUI-SeedVR2_VideoUpscaler
+	url = https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler
