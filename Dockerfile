@@ -63,7 +63,8 @@ RUN ln -s /SwarmUI/Models/ipadapter /ComfyUI/models/ipadapter \
     && ln -s /SwarmUI/Models/Joy_caption_two /ComfyUI/models/Joy_caption_two \
     && ln -s /SwarmUI/Models/LLM /ComfyUI/models/LLM \
     && ln -s /SwarmUI/Models/clip/siglip-so400m-patch14-384 /ComfyUI/models/clip/siglip-so400m-patch14-384 \
-    && ln -s /SwarmUI/Models/rembg /ComfyUI/models/rembg
+    && ln -s /SwarmUI/Models/rembg /ComfyUI/models/rembg \
+    && ln -s /SwarmUI/Models/SeedVR2 /ComfyUI/models/SeedVR2
 
 # 设置 ComfyUI 环境变量
 ENV COMFYUI_HOST=0.0.0.0
