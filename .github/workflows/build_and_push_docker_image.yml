@@ -11,6 +11,10 @@ on:
         description: 'Registry URL (e.g., http://<public-ip>:<port>)'
         required: false
         default: ''  # 默认使用 Docker Hub
+      project:
+        description: 'Project name for custom registry (e.g., "myproject")'
+        required: true  # 强制要求输入项目名
+        default: 'comfyui'  # 默认值为 "comfyui" 可以根据需要修改
 
 jobs:
   build-and-push:
@@ -79,6 +83,6 @@ jobs:
             docker push xiuzhenpeng/comfyui:${{ github.event.inputs.tag || 'latest' }}
           else
             echo "Pushing to custom registry: ${{ github.event.inputs.registry }}"
-            docker tag xiuzhenpeng/comfyui:${{ github.event.inputs.tag || 'latest' }} ${{ github.event.inputs.registry }}/xiuzhenpeng/comfyui:${{ github.event.inputs.tag || 'latest' }}
-            docker push ${{ github.event.inputs.registry }}/xiuzhenpeng/comfyui:${{ github.event.inputs.tag || 'latest' }}
+            docker tag xiuzhenpeng/comfyui:${{ github.event.inputs.tag || 'latest' }} ${{ github.event.inputs.registry }}/${{ github.event.inputs.project }}/comfyui:${{ github.event.inputs.tag || 'latest' }}
+            docker push ${{ github.event.inputs.registry }}/${{ github.event.inputs.project }}/comfyui:${{ github.event.inputs.tag || 'latest' }}
           fi
