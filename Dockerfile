@@ -62,7 +62,7 @@ RUN rm -rf .git* \
 RUN ln -s /SwarmUI/Models/LLM /ComfyUI/models/LLM \
     && ln -s /SwarmUI/Models/clip/siglip-so400m-patch14-384 /ComfyUI/models/clip/siglip-so400m-patch14-384 \
     && ln -s /SwarmUI/Models/rembg /ComfyUI/models/rembg \
-    && ln -s /SwarmUI/Models/SeedVR2 /ComfyUI/models/SEEDVR2
+    && ln -s /SwarmUI/Models/SEEDVR2 /ComfyUI/models/SEEDVR2
 
 # 设置 ComfyUI 环境变量
 ENV COMFYUI_HOST=0.0.0.0
