@@ -13,6 +13,12 @@
 [submodule "custom_nodes/ComfyUI-TeaCache"]
 	path = custom_nodes/ComfyUI-TeaCache
 	url = https://github.com/welltop-cn/ComfyUI-TeaCache
+[submodule "custom_nodes/ComfyUI_IPAdapter_plus"]
+	path = custom_nodes/ComfyUI_IPAdapter_plus
+	url = https://github.com/cubiq/ComfyUI_IPAdapter_plus
+[submodule "custom_nodes/ComfyUI_SLK_joy_caption_two"]
+	path = custom_nodes/ComfyUI_SLK_joy_caption_two
+	url = https://github.com/EvilBT/ComfyUI_SLK_joy_caption_two
 [submodule "custom_nodes/ComfyUI-Lotus"]
 	path = custom_nodes/ComfyUI-Lotus
 	url = https://github.com/kijai/ComfyUI-Lotus
@@ -22,12 +28,21 @@
 [submodule "custom_nodes/was-node-suite-comfyui"]
 	path = custom_nodes/was-node-suite-comfyui
 	url = https://github.com/WASasquatch/was-node-suite-comfyui
+[submodule "custom_nodes/comfyui-easyapi-nodes"]
+	path = custom_nodes/comfyui-easyapi-nodes
+	url = https://github.com/lldacing/comfyui-easyapi-nodes.git
 [submodule "custom_nodes/execution-inversion-demo-comfyui"]
 	path = custom_nodes/execution-inversion-demo-comfyui
 	url = https://github.com/BadCafeCode/execution-inversion-demo-comfyui.git
 [submodule "custom_nodes/xiu_iat"]
 	path = custom_nodes/xiu_iat
 	url = https://github.com/Xiuzhenpeng/xiu_iat_comfyui.git
+[submodule "custom_nodes/ComfyUI-IAT"]
+	path = custom_nodes/ComfyUI-IAT
+	url = https://github.com/Eric7758/ComfyUI-IAT
+[submodule "custom_nodes/ComfyUI-SUPIR"]
+	path = custom_nodes/ComfyUI-SUPIR
+	url = https://github.com/kijai/ComfyUI-SUPIR.git
 [submodule "custom_nodes/comfyui-various"]
 	path = custom_nodes/comfyui-various
 	url = https://github.com/jamesWalker55/comfyui-various.git
@@ -37,12 +52,9 @@
 [submodule "custom_nodes/comfyui-mixlab-nodes"]
 	path = custom_nodes/comfyui-mixlab-nodes
 	url = https://github.com/MixLabPro/comfyui-mixlab-nodes.git
+[submodule "custom_nodes/ComfyUI-IC-Light-Native"]
+	path = custom_nodes/ComfyUI-IC-Light-Native
+	url = https://github.com/huchenlei/ComfyUI-IC-Light-Native.git
 [submodule "custom_nodes/ComfyUI-SeedVR2_VideoUpscaler"]
 	path = custom_nodes/ComfyUI-SeedVR2_VideoUpscaler
 	url = https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler
-[submodule "custom_nodes/LanPaint"]
-	path = custom_nodes/LanPaint
-	url = https://github.com/scraed/LanPaint
-[submodule "custom_nodes/ComfyUI-IAT"]
-	path = custom_nodes/ComfyUI-IAT
-	url = https://github.com/Eric7758/ComfyUI-IAT

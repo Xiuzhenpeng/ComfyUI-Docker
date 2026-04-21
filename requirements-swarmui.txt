@@ -14,3 +14,11 @@ matplotlib
 opencv-python-headless
 imageio_ffmpeg
 omegaconf
+pyopengl
+glfw
+simpleeval
+blake3
+filelock
+
+# custom_nodes comfyui-mixlab-nodes
+fal-client
