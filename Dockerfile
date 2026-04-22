@@ -63,6 +63,7 @@ RUN ln -sfn /SwarmUI/Models/LLM /ComfyUI/models/LLM \
     && ln -sfn /SwarmUI/Models/clip/siglip-so400m-patch14-384 /ComfyUI/models/clip/siglip-so400m-patch14-384 \
     && ln -sfn /SwarmUI/Models/rembg /ComfyUI/models/rembg \
     && ln -sfn /SwarmUI/Models/SEEDVR2 /ComfyUI/models/SEEDVR2 \
+    && rm -rf /ComfyUI/models/diffusion_models \
     && ln -sfn /SwarmUI/Models/diffusion_models /ComfyUI/models/diffusion_models
 
 # 设置 ComfyUI 环境变量
