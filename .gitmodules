@@ -49,3 +49,6 @@
 [submodule "custom_nodes/LanPaint"]
 	path = custom_nodes/LanPaint
 	url = https://github.com/scraed/LanPaint
+[submodule "custom_nodes/ComfyUI-ToSVG-Potracer"]
+	path = custom_nodes/ComfyUI-ToSVG-Potracer
+	url = https://github.com/ImagineerNL/ComfyUI-ToSVG-Potracer
