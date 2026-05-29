@@ -31,24 +31,15 @@
 [submodule "custom_nodes/ComfyUI-IAT"]
 	path = custom_nodes/ComfyUI-IAT
 	url = https://github.com/Eric7758/ComfyUI-IAT
-[submodule "custom_nodes/ComfyUI-SUPIR"]
-	path = custom_nodes/ComfyUI-SUPIR
-	url = https://github.com/kijai/ComfyUI-SUPIR.git
 [submodule "custom_nodes/comfyui-various"]
 	path = custom_nodes/comfyui-various
 	url = https://github.com/jamesWalker55/comfyui-various.git
 [submodule "custom_nodes/ComfyUI_essentials"]
 	path = custom_nodes/ComfyUI_essentials
 	url = https://github.com/cubiq/ComfyUI_essentials.git
-[submodule "custom_nodes/comfyui-mixlab-nodes"]
-	path = custom_nodes/comfyui-mixlab-nodes
-	url = https://github.com/MixLabPro/comfyui-mixlab-nodes.git
 [submodule "custom_nodes/ComfyUI-SeedVR2_VideoUpscaler"]
 	path = custom_nodes/ComfyUI-SeedVR2_VideoUpscaler
 	url = https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler
 [submodule "custom_nodes/LanPaint"]
 	path = custom_nodes/LanPaint
 	url = https://github.com/scraed/LanPaint
-[submodule "custom_nodes/ComfyUI-ToSVG-Potracer"]
-	path = custom_nodes/ComfyUI-ToSVG-Potracer
-	url = https://github.com/ImagineerNL/ComfyUI-ToSVG-Potracer
