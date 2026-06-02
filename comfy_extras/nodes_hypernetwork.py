@@ -102,7 +102,6 @@ class HypernetworkLoader(IO.ComfyNode):
     def define_schema(cls):
         return IO.Schema(
             node_id="HypernetworkLoader",
-            display_name="Load Hypernetwork",
             category="loaders",
             inputs=[
                 IO.Model.Input("model"),

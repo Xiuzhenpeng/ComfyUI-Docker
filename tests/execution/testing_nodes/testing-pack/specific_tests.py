@@ -409,7 +409,7 @@ class TestSleep(ComfyNodeABC):
     RETURN_TYPES = (IO.ANY,)
     FUNCTION = "sleep"
 
-    CATEGORY = "experimental"
+    CATEGORY = "_for_testing"
 
     async def sleep(self, value, seconds, unique_id):
         pbar = ProgressBar(seconds, node_id=unique_id)
@@ -440,7 +440,7 @@ class TestParallelSleep(ComfyNodeABC):
         }
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "parallel_sleep"
-    CATEGORY = "experimental"
+    CATEGORY = "_for_testing"
     OUTPUT_NODE = True
 
     def parallel_sleep(self, image1, image2, image3, sleep1, sleep2, sleep3, unique_id):
@@ -474,7 +474,7 @@ class TestOutputNodeWithSocketOutput:
         }
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "process"
-    CATEGORY = "experimental"
+    CATEGORY = "_for_testing"
     OUTPUT_NODE = True
 
     def process(self, image, value):

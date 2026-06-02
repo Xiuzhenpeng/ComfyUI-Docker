@@ -1,6 +1,5 @@
 import json
 from comfy.comfy_types.node_typing import IO
-import torch
 
 # Preview Any - original implement from
 # https://github.com/rgthree/rgthree-comfy/blob/main/py/display_any.py
@@ -12,7 +11,7 @@ class PreviewAny():
             "required": {"source": (IO.ANY, {})},
         }
 
-    RETURN_TYPES = (IO.STRING,)
+    RETURN_TYPES = ()
     FUNCTION = "main"
     OUTPUT_NODE = True
 
@@ -20,7 +19,6 @@ class PreviewAny():
     SEARCH_ALIASES = ["show output", "inspect", "debug", "print value", "show text"]
 
     def main(self, source=None):
-        torch.set_printoptions(edgeitems=6)
         value = 'None'
         if isinstance(source, str):
             value = source
@@ -35,8 +33,7 @@ class PreviewAny():
                 except Exception:
                     value = 'source exists, but could not be serialized.'
 
-        torch.set_printoptions()
-        return {"ui": {"text": (value,)}, "result": (value,)}
+        return {"ui": {"text": (value,)}}
 
 NODE_CLASS_MAPPINGS = {
     "PreviewAny": PreviewAny,

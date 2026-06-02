@@ -59,8 +59,7 @@ class ImageRGBToYUV(io.ComfyNode):
         return io.Schema(
             node_id="ImageRGBToYUV",
             search_aliases=["color space conversion"],
-            display_name="Image RGB to YUV",
-            category="image/color",
+            category="image/batch",
             inputs=[
                 io.Image.Input("image"),
             ],
@@ -82,8 +81,7 @@ class ImageYUVToRGB(io.ComfyNode):
         return io.Schema(
             node_id="ImageYUVToRGB",
             search_aliases=["color space conversion"],
-            display_name="Image YUV to RGB",
-            category="image/color",
+            category="image/batch",
             inputs=[
                 io.Image.Input("Y"),
                 io.Image.Input("U"),

@@ -4,10 +4,7 @@ from typing import Any
 from pydantic import BaseModel, ConfigDict, Field, field_serializer
 
 
-class Asset(BaseModel):
-    """API view of an asset. Maps to DB ``AssetReference`` joined with its ``Asset`` blob;
-    ``id`` here is the AssetReference id, not the content-addressed Asset id."""
-
+class AssetSummary(BaseModel):
     id: str
     name: str
     asset_hash: str | None = None
@@ -15,31 +12,59 @@ class Asset(BaseModel):
     mime_type: str | None = None
     tags: list[str] = Field(default_factory=list)
     preview_url: str | None = None
-    preview_id: str | None = None  # references an asset_reference id, not an asset id
-    user_metadata: dict[str, Any] = Field(default_factory=dict)
-    is_immutable: bool = False
-    metadata: dict[str, Any] | None = None
-    job_id: str | None = None
-    prompt_id: str | None = None  # deprecated: use job_id
-    created_at: datetime
-    updated_at: datetime
+    created_at: datetime | None = None
+    updated_at: datetime | None = None
     last_access_time: datetime | None = None
 
     model_config = ConfigDict(from_attributes=True)
 
     @field_serializer("created_at", "updated_at", "last_access_time")
-    def _serialize_datetime(self, v: datetime | None, _info):
+    def _ser_dt(self, v: datetime | None, _info):
         return v.isoformat() if v else None
 
 
-class AssetCreated(Asset):
-    created_new: bool
-
-
 class AssetsList(BaseModel):
-    assets: list[Asset]
+    assets: list[AssetSummary]
     total: int
     has_more: bool
+
+
+class AssetUpdated(BaseModel):
+    id: str
+    name: str
+    asset_hash: str | None = None
+    tags: list[str] = Field(default_factory=list)
+    user_metadata: dict[str, Any] = Field(default_factory=dict)
+    updated_at: datetime | None = None
+
+    model_config = ConfigDict(from_attributes=True)
+
+    @field_serializer("updated_at")
+    def _ser_updated(self, v: datetime | None, _info):
+        return v.isoformat() if v else None
+
+
+class AssetDetail(BaseModel):
+    id: str
+    name: str
+    asset_hash: str | None = None
+    size: int | None = None
+    mime_type: str | None = None
+    tags: list[str] = Field(default_factory=list)
+    user_metadata: dict[str, Any] = Field(default_factory=dict)
+    preview_id: str | None = None
+    created_at: datetime | None = None
+    last_access_time: datetime | None = None
+
+    model_config = ConfigDict(from_attributes=True)
+
+    @field_serializer("created_at", "last_access_time")
+    def _ser_dt(self, v: datetime | None, _info):
+        return v.isoformat() if v else None
+
+
+class AssetCreated(AssetDetail):
+    created_new: bool
 
 
 class TagUsage(BaseModel):
@@ -66,7 +91,3 @@ class TagsRemove(BaseModel):
     removed: list[str] = Field(default_factory=list)
     not_present: list[str] = Field(default_factory=list)
     total_tags: list[str] = Field(default_factory=list)
-
-
-class TagHistogram(BaseModel):
-    tag_counts: dict[str, int]

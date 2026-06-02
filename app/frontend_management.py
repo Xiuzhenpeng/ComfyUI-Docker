@@ -17,7 +17,7 @@ from importlib.metadata import version
 import requests
 from typing_extensions import NotRequired
 
-from utils.install_util import get_missing_requirements_message, get_required_packages_versions
+from utils.install_util import get_missing_requirements_message, requirements_path
 
 from comfy.cli_args import DEFAULT_VERSION_STRING
 import app.logger
@@ -27,7 +27,7 @@ def frontend_install_warning_message():
     return f"""
 {get_missing_requirements_message()}
 
-The ComfyUI frontend is shipped in a pip package so it needs to be updated separately from the ComfyUI code.
+This error is happening because the ComfyUI frontend is no longer shipped as part of the main repo but as a pip package instead.
 """.strip()
 
 def parse_version(version: str) -> tuple[int, int, int]:
@@ -45,7 +45,25 @@ def get_installed_frontend_version():
 
 
 def get_required_frontend_version():
-    return get_required_packages_versions().get("comfyui-frontend-package", None)
+    """Get the required frontend version from requirements.txt."""
+    try:
+        with open(requirements_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line.startswith("comfyui-frontend-package=="):
+                    version_str = line.split("==")[-1]
+                    if not is_valid_version(version_str):
+                        logging.error(f"Invalid version format in requirements.txt: {version_str}")
+                        return None
+                    return version_str
+            logging.error("comfyui-frontend-package not found in requirements.txt")
+            return None
+    except FileNotFoundError:
+        logging.error("requirements.txt not found. Cannot determine required frontend version.")
+        return None
+    except Exception as e:
+        logging.error(f"Error reading requirements.txt: {e}")
+        return None
 
 
 def check_frontend_version():
@@ -199,7 +217,25 @@ class FrontendManager:
 
     @classmethod
     def get_required_templates_version(cls) -> str:
-        return get_required_packages_versions().get("comfyui-workflow-templates", None)
+        """Get the required workflow templates version from requirements.txt."""
+        try:
+            with open(requirements_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line.startswith("comfyui-workflow-templates=="):
+                        version_str = line.split("==")[-1]
+                        if not is_valid_version(version_str):
+                            logging.error(f"Invalid templates version format in requirements.txt: {version_str}")
+                            return None
+                        return version_str
+                logging.error("comfyui-workflow-templates not found in requirements.txt")
+                return None
+        except FileNotFoundError:
+            logging.error("requirements.txt not found. Cannot determine required templates version.")
+            return None
+        except Exception as e:
+            logging.error(f"Error reading requirements.txt: {e}")
+            return None
 
     @classmethod
     def default_frontend_path(cls) -> str:

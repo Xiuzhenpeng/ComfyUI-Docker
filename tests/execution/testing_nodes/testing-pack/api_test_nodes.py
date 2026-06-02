@@ -21,7 +21,7 @@ class TestAsyncProgressUpdate(ComfyNodeABC):
 
     RETURN_TYPES = (IO.ANY,)
     FUNCTION = "execute"
-    CATEGORY = "experimental/async"
+    CATEGORY = "_for_testing/async"
 
     async def execute(self, value, sleep_seconds):
         start = time.time()
@@ -51,7 +51,7 @@ class TestSyncProgressUpdate(ComfyNodeABC):
 
     RETURN_TYPES = (IO.ANY,)
     FUNCTION = "execute"
-    CATEGORY = "experimental/async"
+    CATEGORY = "_for_testing/async"
 
     def execute(self, value, sleep_seconds):
         start = time.time()

@@ -17,8 +17,7 @@ class SaveWEBM(io.ComfyNode):
         return io.Schema(
             node_id="SaveWEBM",
             search_aliases=["export webm"],
-            display_name="Save WEBM",
-            category="video",
+            category="image/video",
             is_experimental=True,
             inputs=[
                 io.Image.Input("images"),
@@ -73,7 +72,7 @@ class SaveVideo(io.ComfyNode):
             node_id="SaveVideo",
             search_aliases=["export video"],
             display_name="Save Video",
-            category="video",
+            category="image/video",
             essentials_category="Basics",
             description="Saves the input images to your ComfyUI output directory.",
             inputs=[
@@ -122,7 +121,7 @@ class CreateVideo(io.ComfyNode):
             node_id="CreateVideo",
             search_aliases=["images to video"],
             display_name="Create Video",
-            category="video",
+            category="image/video",
             description="Create a video from images.",
             inputs=[
                 io.Image.Input("images", tooltip="The images to create a video from."),
@@ -147,7 +146,8 @@ class GetVideoComponents(io.ComfyNode):
             node_id="GetVideoComponents",
             search_aliases=["extract frames", "split video", "video to images", "demux"],
             display_name="Get Video Components",
-            category="video",
+            category="image/video",
+            essentials_category="Video Tools",
             description="Extracts all components from a video: frames, audio, and framerate.",
             inputs=[
                 io.Video.Input("video", tooltip="The video to extract components from."),
@@ -175,7 +175,7 @@ class LoadVideo(io.ComfyNode):
             node_id="LoadVideo",
             search_aliases=["import video", "open video", "video file"],
             display_name="Load Video",
-            category="video",
+            category="image/video",
             essentials_category="Basics",
             inputs=[
                 io.Combo.Input("file", options=sorted(files), upload=io.UploadType.video),
@@ -217,8 +217,7 @@ class VideoSlice(io.ComfyNode):
                 "frame load cap",
                 "start time",
             ],
-            category="video",
-            essentials_category="Video Tools",
+            category="image/video",
             inputs=[
                 io.Video.Input("video"),
                 io.Float.Input(

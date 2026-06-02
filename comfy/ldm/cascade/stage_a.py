@@ -136,7 +136,16 @@ class ResBlock(nn.Module):
             ops.Linear(c_hidden, c),
         )
 
-        self.gammas = nn.Parameter(torch.zeros(6), requires_grad=False)
+        self.gammas = nn.Parameter(torch.zeros(6), requires_grad=True)
+
+        # Init weights
+        def _basic_init(module):
+            if isinstance(module, nn.Linear) or isinstance(module, nn.Conv2d):
+                torch.nn.init.xavier_uniform_(module.weight)
+                if module.bias is not None:
+                    nn.init.constant_(module.bias, 0)
+
+        self.apply(_basic_init)
 
     def _norm(self, x, norm):
         return norm(x.permute(0, 2, 3, 1)).permute(0, 3, 1, 2)

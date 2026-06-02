@@ -148,4 +148,3 @@ class MotionControlRequest(BaseModel):
     keep_original_sound: str = Field(...)
     character_orientation: str = Field(...)
     mode: str = Field(..., description="'pro' or 'std'")
-    model_name: str = Field(...)

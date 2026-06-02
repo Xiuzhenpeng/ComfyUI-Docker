@@ -131,8 +131,6 @@ class HunyuanVideo15SuperResolution(io.ComfyNode):
     def define_schema(cls):
         return io.Schema(
             node_id="HunyuanVideo15SuperResolution",
-            display_name="Hunyuan Video 1.5 Super Resolution",
-            category="conditioning/video_models",
             inputs=[
                 io.Conditioning.Input("positive"),
                 io.Conditioning.Input("negative"),
@@ -383,8 +381,6 @@ class HunyuanRefinerLatent(io.ComfyNode):
     def define_schema(cls):
         return io.Schema(
             node_id="HunyuanRefinerLatent",
-            display_name="Hunyuan Latent Refiner",
-            category="conditioning/video_models",
             inputs=[
                 io.Conditioning.Input("positive"),
                 io.Conditioning.Input("negative"),

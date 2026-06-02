@@ -3,8 +3,9 @@ import comfy.utils
 import comfy.model_management
 import torch
 
+from comfy.ldm.lightricks.vae.audio_vae import AudioVAE
 from comfy_api.latest import ComfyExtension, io
-from comfy_extras.nodes_audio import VAEEncodeAudio
+
 
 class LTXVAudioVAELoader(io.ComfyNode):
     @classmethod
@@ -27,14 +28,10 @@ class LTXVAudioVAELoader(io.ComfyNode):
     def execute(cls, ckpt_name: str) -> io.NodeOutput:
         ckpt_path = folder_paths.get_full_path_or_raise("checkpoints", ckpt_name)
         sd, metadata = comfy.utils.load_torch_file(ckpt_path, return_metadata=True)
-        sd = comfy.utils.state_dict_prefix_replace(sd, {"audio_vae.": "autoencoder.", "vocoder.": "vocoder."}, filter_keys=True)
-        vae = comfy.sd.VAE(sd=sd, metadata=metadata)
-        vae.throw_exception_if_invalid()
-
-        return io.NodeOutput(vae)
+        return io.NodeOutput(AudioVAE(sd, metadata))
 
 
-class LTXVAudioVAEEncode(VAEEncodeAudio):
+class LTXVAudioVAEEncode(io.ComfyNode):
     @classmethod
     def define_schema(cls) -> io.Schema:
         return io.Schema(
@@ -53,8 +50,15 @@ class LTXVAudioVAEEncode(VAEEncodeAudio):
         )
 
     @classmethod
-    def execute(cls, audio, audio_vae) -> io.NodeOutput:
-        return super().execute(audio_vae, audio)
+    def execute(cls, audio, audio_vae: AudioVAE) -> io.NodeOutput:
+        audio_latents = audio_vae.encode(audio)
+        return io.NodeOutput(
+            {
+                "samples": audio_latents,
+                "sample_rate": int(audio_vae.sample_rate),
+                "type": "audio",
+            }
+        )
 
 
 class LTXVAudioVAEDecode(io.ComfyNode):
@@ -76,12 +80,12 @@ class LTXVAudioVAEDecode(io.ComfyNode):
         )
 
     @classmethod
-    def execute(cls, samples, audio_vae) -> io.NodeOutput:
+    def execute(cls, samples, audio_vae: AudioVAE) -> io.NodeOutput:
         audio_latent = samples["samples"]
         if audio_latent.is_nested:
             audio_latent = audio_latent.unbind()[-1]
-        audio = audio_vae.decode(audio_latent).movedim(-1, 1).to(audio_latent.device)
-        output_audio_sample_rate = audio_vae.first_stage_model.output_sample_rate
+        audio = audio_vae.decode(audio_latent).to(audio_latent.device)
+        output_audio_sample_rate = audio_vae.output_sample_rate
         return io.NodeOutput(
             {
                 "waveform": audio,
@@ -139,16 +143,17 @@ class LTXVEmptyLatentAudio(io.ComfyNode):
         frames_number: int,
         frame_rate: int,
         batch_size: int,
-        audio_vae,
+        audio_vae: AudioVAE,
     ) -> io.NodeOutput:
         """Generate empty audio latents matching the reference pipeline structure."""
 
         assert audio_vae is not None, "Audio VAE model is required"
 
         z_channels = audio_vae.latent_channels
-        audio_freq = audio_vae.first_stage_model.latent_frequency_bins
+        audio_freq = audio_vae.latent_frequency_bins
+        sampling_rate = int(audio_vae.sample_rate)
 
-        num_audio_latents = audio_vae.first_stage_model.num_of_latents_from_frames(frames_number, frame_rate)
+        num_audio_latents = audio_vae.num_of_latents_from_frames(frames_number, frame_rate)
 
         audio_latents = torch.zeros(
             (batch_size, z_channels, num_audio_latents, audio_freq),
@@ -158,6 +163,7 @@ class LTXVEmptyLatentAudio(io.ComfyNode):
         return io.NodeOutput(
             {
                 "samples": audio_latents,
+                "sample_rate": sampling_rate,
                 "type": "audio",
             }
         )

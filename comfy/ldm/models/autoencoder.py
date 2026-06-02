@@ -155,7 +155,6 @@ class AutoencodingEngineLegacy(AutoencodingEngine):
     def __init__(self, embed_dim: int, **kwargs):
         self.max_batch_size = kwargs.pop("max_batch_size", None)
         ddconfig = kwargs.pop("ddconfig")
-        decoder_ddconfig = kwargs.pop("decoder_ddconfig", ddconfig)
         super().__init__(
             encoder_config={
                 "target": "comfy.ldm.modules.diffusionmodules.model.Encoder",
@@ -163,7 +162,7 @@ class AutoencodingEngineLegacy(AutoencodingEngine):
             },
             decoder_config={
                 "target": "comfy.ldm.modules.diffusionmodules.model.Decoder",
-                "params": decoder_ddconfig,
+                "params": ddconfig,
             },
             **kwargs,
         )

@@ -6,7 +6,6 @@ import uuid
 import glob
 import shutil
 import logging
-import tempfile
 from aiohttp import web
 from urllib import parse
 from comfy.cli_args import args
@@ -28,8 +27,8 @@ def get_file_info(path: str, relative_to: str) -> FileInfo:
     return {
         "path": os.path.relpath(path, relative_to).replace(os.sep, '/'),
         "size": os.path.getsize(path),
-        "modified": int(os.path.getmtime(path) * 1000),
-        "created": int(os.path.getctime(path) * 1000),
+        "modified": os.path.getmtime(path),
+        "created": os.path.getctime(path)
     }
 
 
@@ -378,15 +377,8 @@ class UserManager():
             try:
                 body = await request.read()
 
-                dir_name = os.path.dirname(path)
-                fd, tmp_path = tempfile.mkstemp(dir=dir_name)
-                try:
-                    with os.fdopen(fd, "wb") as f:
-                        f.write(body)
-                    os.replace(tmp_path, path)
-                except:
-                    os.unlink(tmp_path)
-                    raise
+                with open(path, "wb") as f:
+                    f.write(body)
             except OSError as e:
                 logging.warning(f"Error saving file '{path}': {e}")
                 return web.Response(

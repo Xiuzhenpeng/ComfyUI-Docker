@@ -2,6 +2,7 @@
 precision highp float;
 
 uniform sampler2D u_image0;
+uniform vec2 u_resolution;
 uniform float u_float0;  // amount    [0.0 - 3.0]  typical: 0.5-1.5
 uniform float u_float1;  // radius    [0.5 - 10.0] blur radius in pixels
 uniform float u_float2;  // threshold [0.0 - 0.1]  min difference to sharpen
@@ -18,7 +19,7 @@ float getLuminance(vec3 color) {
 }
 
 void main() {
-    vec2 texel = 1.0 / vec2(textureSize(u_image0, 0));
+    vec2 texel = 1.0 / u_resolution;
     float radius = max(u_float1, 0.5);
     float amount = u_float0;
     float threshold = u_float2;

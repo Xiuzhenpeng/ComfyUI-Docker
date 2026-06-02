@@ -11,10 +11,9 @@ class ImageCompare(IO.ComfyNode):
     def define_schema(cls):
         return IO.Schema(
             node_id="ImageCompare",
-            display_name="Compare Images",
+            display_name="Image Compare",
             description="Compares two images side by side with a slider.",
             category="image",
-            essentials_category="Image Tools",
             is_experimental=True,
             is_output_node=True,
             inputs=[

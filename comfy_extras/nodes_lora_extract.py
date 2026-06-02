@@ -91,7 +91,7 @@ class LoraSave(io.ComfyNode):
             node_id="LoraSave",
             search_aliases=["export lora"],
             display_name="Extract and Save Lora",
-            category="experimental",
+            category="_for_testing",
             inputs=[
                 io.String.Input("filename_prefix", default="loras/ComfyUI_extracted_lora"),
                 io.Int.Input("rank", default=8, min=1, max=4096, step=1, advanced=True),
