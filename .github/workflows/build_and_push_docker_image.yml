@@ -16,6 +16,9 @@ on:
         required: true  # 强制要求输入项目名
         default: 'comfyui'  # 默认值为 "comfyui" 可以根据需要修改
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
